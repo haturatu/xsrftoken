@@ -10,6 +10,8 @@ To get the package, execute:
 
 ```sh
 go get github.com/haturatu/xsrftoken
+# or
+GOPROXY=direct go get github.com/haturatu/xsrftoken@latest
 ```
 
 ## Usage
