@@ -59,6 +59,7 @@ func main() {
         if !isTokenInvalid {
                 log.Println("As expected, the invalid token was correctly identified.")
         }
+}
 ```
 
 ## Author
