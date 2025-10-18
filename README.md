@@ -2,7 +2,7 @@
 
 This package provides methods for generating and validating secure XSRF tokens.
 
-This is a fork of the original `golang.org/x/net/xsrftoken` package. The main difference is that this version uses **SHA-256** for hashing, whereas the original used SHA-1, providing improved security.
+This is a fork of the original `golang.org/x/net/xsrftoken` package. The main difference is that this version uses **SHA-256** for hashing, whereas the original used SHA-1.
 
 ## Installation
 
