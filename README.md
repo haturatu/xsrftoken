@@ -28,39 +28,37 @@ Here is a simple example:
 package main
 
 import (
-	"fmt"
-	"log"
+        "fmt"
+        "log"
 
-	"github.com/haturatu/xsrftoken"
+        "github.com/haturatu/xsrftoken"
 )
 
 func main() {
-	// A secret key for your application. Must be non-empty.
-	key := "your-super-secret-key"
-	// A unique identifier for the user.
-	userID := "user123"
-	// An identifier for the action being performed.
-	actionID := "/profile/update"
+        // A secret key for your application. Must be non-empty.
+        key := "your-super-secret-key"
+        // A unique identifier for the user.
+        userID := "user123"
+        // An identifier for the action being performed.
+        actionID := "/profile/update"
 
-	// Generate a token.
-	token := xsrftoken.Generate(key, userID, actionID)
-	fmt.Printf("Generated token: %s
-", token)
+        // Generate a token.
+        token := xsrftoken.Generate(key, userID, actionID)
+        fmt.Printf("Generated token: %s\n", token)
 
-	// Validate the token.
-	isValid := xsrftoken.Valid(token, key, userID, actionID)
-	if isValid {
-		log.Println("Token is valid!")
-	} else {
-		log.Println("Token is invalid!")
-	}
+        // Validate the token.
+        isValid := xsrftoken.Valid(token, key, userID, actionID)
+        if isValid {
+                log.Println("Token is valid!")
+        } else {
+                log.Println("Token is invalid!")
+        }
 
-	// Example of an invalid token
-	isInvalid := xsrftoken.Valid("an-obviously-invalid-token", key, userID, actionID)
-	if !isInvalid {
-		log.Println("As expected, the invalid token was correctly identified.")
-	}
-}
+        // Example of an invalid token
+        isTokenInvalid := xsrftoken.Valid("an-obviously-invalid-token", key, userID, actionID)
+        if !isTokenInvalid {
+                log.Println("As expected, the invalid token was correctly identified.")
+        }
 ```
 
 ## Author
